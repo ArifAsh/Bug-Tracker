@@ -1,0 +1,10 @@
+.topbar{
+    position:fixed;
+    width:100%;
+    background-color: var(--prim-color);
+    height: 8%;
+    margin-left:20%;
+    padding-left:10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.233);
+
+}

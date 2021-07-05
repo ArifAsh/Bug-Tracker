@@ -1,0 +1,25 @@
+.dashboard-card{
+    color: black;
+    width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content:center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 70%;
+    padding:15px;
+    cursor: pointer;
+   
+}
+.dashboard-card:hover{
+    transition: all 0.3s;
+    transform:scale(1.05);
+
+
+}
+
+
+.dashboard-card p{
+    font-size: 1.5rem;
+  
+}

@@ -1,0 +1,14 @@
+.bug-card{
+    background-color: #cae1ff;
+    box-shadow:2px 2px 2px var(--prim-color);
+    text-align: center;
+    margin: 10px;
+    min-width: 275px;
+    min-height: 200px;
+    margin-top: 10%;
+    cursor: pointer;
+}
+.bug-card:hover{
+    transition:all 0.3s;
+    transform: scale(1.05);
+}

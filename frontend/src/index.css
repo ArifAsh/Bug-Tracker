@@ -1,0 +1,33 @@
+html{
+    margin-top: -10px;
+    margin-left: -10px;
+    --prim-color: white;
+    color:black;
+    background-color:rgb(206, 205, 205) ;
+}
+
+button{
+background: 77acf1;
+border-radius: 5px;
+padding: 5px 30px;
+color:black;
+font:normal bold 18px "Open sans",sans-serif;
+text-align:center;
+margin-bottom: 10px;
+}
+button:hover {
+    transition: all 0.3s;
+    background: grey;
+}
+
+.page-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+   
+}
+.Page{
+margin:0 0 0 20%;
+   padding-top: 8%;
+}

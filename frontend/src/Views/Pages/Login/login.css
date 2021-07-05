@@ -1,0 +1,42 @@
+
+.loginBG{
+    width:100vw;
+    height:100vh;
+    background:url('../../../images/login-background.jpg');
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.021);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    position: absolute;
+    text-align: center;
+    display: table;
+}
+
+.login-panel{
+    background-color: var(--prim-color);
+    border:1px solid grey;
+    border-radius: 5px;
+    padding-bottom:10px;
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    margin-top:17.5%;
+    width:25%;
+    height:30%;
+   
+    
+}
+.login-panel h1{
+    width: 100%;
+
+}
+
+.login-panel input{
+    width: 75%;
+    height: 30px;
+    border-radius: 5px;
+    border:none;
+    margin:10px; 
+    padding-left:5px;
+}
+
