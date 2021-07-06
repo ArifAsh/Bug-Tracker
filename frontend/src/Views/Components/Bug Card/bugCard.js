@@ -3,16 +3,18 @@ import './bugCard.css'
 import PriorityController from '../../../Controllers/priorityController'
 
 export default (props)=>{
-    const {name,priority,version} = props.bug;
-    const {level,color} = PriorityController(priority);
+    const {name,priority,type} = props.bug;
+    const {level,color,ticket} = PriorityController(priority,type);
     function Clicked(){
         props.clicked(props.name);
     }
     return(
-        <div className='bug-card' onClick={Clicked} style={{color:color}}>
-            <h2 className='name'>{name}</h2>
-            <h4 className='priority'>{level}</h4>
-            <h5 className='version'>{version}</h5>
+        <div className="container">
+            <div className='bug-card' onClick={Clicked}> 
+                <h2 className='name' style={{backgroundColor:"#FFFFFF",color:color}}>{level}</h2>
+                <h2 className='priority'> {name}</h2>
+                <h4 className='type'>{ticket}</h4>
+            </div>
         </div>
     )
 }

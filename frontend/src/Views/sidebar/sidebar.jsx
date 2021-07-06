@@ -15,9 +15,9 @@ export default ()=>{
         <div className="sidebar">
             <Link className='nav-link' to="/"><h1 className="brand">Bug-Tracker</h1></Link>
             <ul>
-                <li><Link to='/' className='nav-link' >Dashboard</Link></li>
-                <li><Link to='/viewbugs' className='nav-link'>View Bugs</Link></li>
-                {auth.admin && <li><Link to='/create' className='nav-link'>Create Bugs</Link></li>}
+            <Link to='/' className='nav-link' ><li>Dashboard</li></Link>
+            <Link to='/viewbugs' className='nav-link'><li>View Bugs</li></Link>
+                {auth.admin && <Link to='/create' className='nav-link'><li>Create Bugs</li></Link>}
             </ul>
             <button className="nav-link logout" onClick={SignOut}>Logout</button>
         </div>

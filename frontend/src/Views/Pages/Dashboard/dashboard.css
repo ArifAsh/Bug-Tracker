@@ -6,7 +6,10 @@
 
 }
 .chart{
-    margin:auto ;
+    margin-top: 8%;
+    margin-left: 2%;
+    margin-bottom:8%;
+    margin-right:2%;
     cursor: pointer;
     border-radius: 5px;
 
@@ -18,7 +21,7 @@
     background-color: white;
     color: grey;
     padding:1%;
-    text-align: left;
+    text-align: center;
     font-weight: lighter;
     
 }

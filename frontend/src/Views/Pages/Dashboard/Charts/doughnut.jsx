@@ -35,7 +35,7 @@ export default()=>{
      <div style={{backgroundColor: "#b5b3b1"}} >  
          <Doughnut 
           data={chartData}
-          height={400}
+          height={350}
           width={520}
           options={{
             maintainAspectRatio: false ,

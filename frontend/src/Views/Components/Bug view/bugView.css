@@ -1,7 +1,7 @@
 .bug-view{
     position : absolute;
     z-index: 10;
-    width: 60vw;
+    width: 62vw;
     border:1px solid black;
     box-shadow: 2px 2px black;
     border-radius: 5px;

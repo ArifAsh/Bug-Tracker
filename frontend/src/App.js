@@ -1,6 +1,6 @@
 import Login from './Views/Pages/Login/login'
 import {useSelector} from 'react-redux'
-import ViewBugPage from './Views/Pages/viewBugs'
+import ViewBugPage from './Views/Pages/ViewBug/viewBugs'
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import Dashboard from './Views/Pages/Dashboard/dashboard'
 import Sidebar from './Views/sidebar/sidebar'

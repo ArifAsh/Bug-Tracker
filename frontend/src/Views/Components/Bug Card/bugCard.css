@@ -1,11 +1,15 @@
+.container{
+    padding:0;
+    margin:10px;
+    width: 275px;
+}
 .bug-card{
-    background-color: #cae1ff;
-    box-shadow:2px 2px 2px var(--prim-color);
+    background-color:rgba(0, 0, 0, 0.5);
+    box-shadow:2px 2px 2px black;
     text-align: center;
     margin: 10px;
     min-width: 275px;
     min-height: 200px;
-    margin-top: 10%;
     cursor: pointer;
 }
 .bug-card:hover{

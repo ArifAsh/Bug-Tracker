@@ -9,10 +9,12 @@ export default()=>{
   let highCount = 0;
   let midCount = 0;
   let lowCount = 0;
+  let completeCount = 0;
   if(bugs!=undefined){        
       highCount = filterBugs(1).length;
       midCount = filterBugs(2).length;
       lowCount = filterBugs(3).length; 
+      completeCount =  filterBugs(4).length; 
     }
   function filterBugs(priority){
     return bugs.filter((bug)=>{return bug.priority == priority})
@@ -20,12 +22,12 @@ export default()=>{
    
     const chartData={
       
-      labels: ["High","Medium","Low"],
+      labels: ["High","Medium","Low","Completed"],
       datasets:[
         {
           
-          data:[highCount,midCount,lowCount],
-          backgroundColor:["#410000","#a30000","#ff0606"], 
+          data:[highCount,midCount,lowCount,completeCount],
+          backgroundColor:["#410000","#a30000","#ff0606","#00FF00"], 
           borderColor: 'rgba(75,192,192,1)',
         }
       ]
@@ -35,7 +37,7 @@ export default()=>{
        
        <Bar
           data={chartData}
-          height={400}
+          height={350}
           width={520}
 	        
           options={{

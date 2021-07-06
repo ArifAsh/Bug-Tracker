@@ -1,0 +1,15 @@
+.Search{
+    text-align: center;
+}
+
+.Search input[type=text]{
+    float: center;
+    padding: 6px;
+    border: none;
+    margin-top: 1.5%;
+    margin-right: 1.5%;
+    font-size: 25px;
+    width: 75%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
