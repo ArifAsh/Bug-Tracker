@@ -93,5 +93,6 @@ export function retrieveBugs(){
 
 
     let sorted = data.sort((a,b)=>{return a.priority - b.priority})
+ 
     return sorted;
 }

@@ -17,7 +17,7 @@ export default ()=>{
             <ul>
             <Link to='/' className='nav-link' ><li>Dashboard</li></Link>
             <Link to='/viewbugs' className='nav-link'><li>View Bugs</li></Link>
-                {auth.admin && <Link to='/create' className='nav-link'><li>Create Bugs</li></Link>}
+                {auth.admin  && <Link to='/create' className='nav-link'><li>Create Bugs</li></Link>}
             </ul>
             <button className="nav-link logout" onClick={SignOut}>Logout</button>
         </div>

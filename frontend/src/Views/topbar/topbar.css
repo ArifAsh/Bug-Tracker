@@ -1,6 +1,7 @@
 .topbar{
     overflow: hidden;
     position:fixed;
+    z-index:10;
     width:80%;
     background-color: var(--prim-color);
     height: 8%;

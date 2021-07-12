@@ -13,7 +13,7 @@ const slice = createSlice({
             state.admin = true;
         },
         signOut:(state)=>{
-            state.LoggenIn = false;
+            state.LoggedIn = false;
             state.admin = false;
         },
         createUser:(state,action)=>{

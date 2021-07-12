@@ -5,19 +5,19 @@ import {useSelector} from 'react-redux'
 
 
 export default()=>{
-  const bugs = useSelector(state=>state.bugs);  
+  const {bugs} = useSelector(state=>state);  
   let highCount = 0;
   let midCount = 0;
   let lowCount = 0;
   let completeCount = 0;
-  if(bugs!=undefined){        
+  if(bugs.bug!=undefined){        
       highCount = filterBugs(1).length;
       midCount = filterBugs(2).length;
       lowCount = filterBugs(3).length; 
       completeCount =  filterBugs(4).length; 
     }
   function filterBugs(priority){
-    return bugs.filter((bug)=>{return bug.priority == priority})
+    return bugs.bug.filter((bug)=>{return bug.priority == priority})
   }
    
     const chartData={

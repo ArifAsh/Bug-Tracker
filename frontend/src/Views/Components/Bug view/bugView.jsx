@@ -33,7 +33,7 @@ export default (props)=>{
             <ViewSection title = 'App Version' info={bug.version} />
             <ViewSection title = 'Bug type' info={bug.type} />
             <ViewSection title = 'Time Created' info={bug.time} />
-            <button onClick={()=>{dispatchEvent(markComplete())}}>Mark Complete</button>
+            <button onClick={()=>{dispatch(markComplete(bug._id))}}>Mark Complete</button>
         </div>
         {displayEdit && <EditBug title="Edit Bug" bug={bug} close={editClicked}/>}
         </>
