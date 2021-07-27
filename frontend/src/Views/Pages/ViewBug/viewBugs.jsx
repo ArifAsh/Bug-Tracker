@@ -6,7 +6,7 @@ import BugView from '../../Components/Bug view/bugView'
 import "./viewBugs.css"
 
 export default() =>{
-
+    const {bugs} = useSelector(state=>state);
     function Search(){ 
     const searchBar = document.getElementById("search")
     searchBar.addEventListener('keyup',(e)=>{
@@ -54,7 +54,9 @@ export default() =>{
         priority: 0,
     })
     const dispatch = useDispatch();
-    const {bugs} = useSelector(state=>state);
+   
+   
+   
 
     window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
@@ -68,7 +70,7 @@ export default() =>{
           }
         }
       }
-
+  
     return(
         <div className="Search">
         <input type="text" id="search" onClick={Search} placeholder="Search tickets.."></input>
@@ -86,10 +88,10 @@ export default() =>{
         <div className='page-container' style={{width:"78%"}}>
        
             {bugs.filteredBugs.length === 0  && !DISPLAY_BUG.searched? bugs.bug.map((bug,key)=>(
-                (DISPLAY_BUG.priority === 0 || DISPLAY_BUG.priority === bug.priority)  && < BugCard  key={key} bug={bug} clicked={()=>BugClicked(bug.name) } />
+                (DISPLAY_BUG.priority === 0 || DISPLAY_BUG.priority === Number(bug.priority))  && < BugCard  key={key} bug={bug} clicked={()=>BugClicked(bug.name) } />
             )) :  bugs.filteredBugs.map((bug,key)=>(
                 
-                (DISPLAY_BUG.priority === 0 || DISPLAY_BUG.priority === bug.priority)  && <BugCard  key={key} bug={bug} clicked={()=>BugClicked(bug.name) } />
+                (DISPLAY_BUG.priority === 0 || DISPLAY_BUG.priority === Number(bug.priority))  && <BugCard  key={key} bug={bug} clicked={()=>BugClicked(bug.name) } />
             ))}
             
             {DISPLAY_BUG.isDisplayed && <BugView clicked={BugClicked} bug={bugs.bug.filter((bug) => bug.name == DISPLAY_BUG.name)[0]} />}

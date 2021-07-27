@@ -4,8 +4,10 @@
     width: 62vw;
     border:1px solid black;
     box-shadow: 2px 2px black;
+    margin-top: 0;
     margin-left:1.5%;
     border-radius: 5px;
+    float: top;
     background-color: var(--prim-color);
     display: flex;
     flex-wrap: wrap;

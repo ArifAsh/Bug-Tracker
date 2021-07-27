@@ -1,4 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit'
+import bug from '../../Models/bugModel';
+import login from '../../Views/Pages/Login/login';
 import {retrieveBugs} from '../bugController'
 
 const slice = createSlice({
@@ -11,27 +13,57 @@ const slice = createSlice({
         getBugs:(state) => {
             return state.bugs
         },
-
+        removeBug:(state,action)=>{
+            const index = action.payload._id;
+            return{
+                ...state,
+                bug: [...state.bug.slice(0,index)]
+               
+            }
+        },
+        getNewId: (state,action)=>{
+            
+        
+            return{
+                ...state,
+                bug: [...state.bug, ...action.payload],
+        
+        }
+        },
         filter:(state,action) =>{
             return {...state, filteredBugs : [...action.payload]};
         },
 
-        createBugs:(state,actions)=>{
-
+        createBugs:(state,action)=>{
+          
+        return {
+            ...state,
+            bug: [...state.bug,...action.payload]
+        }
         },
-        updateBug:(state,actions) =>{
-
+        updateBug:(state,action) =>{
+            const index = action.payload._id;
+            return {
+                ...state,
+                bug: [...state.bug.slice(0,index),action.payload,...state.bug.slice(index+1)],
+              
+            }
         },
         markComplete:(state,action)=>{
     
-            const index = state.bugs.findIndex(
-                (bug) => bug.id === action.payload._id
-              );
-              state.bugs[index].priority = 4;
+            const index =action.payload._id;
+           
+            action.payload.priority = 4
+            
+            return {
+                ...state,
+                bug: [...state.bug.slice(0,index),action.payload,...state.bug.slice(index+1)]
+            }
+            
         
 
         }
     }
 })
 export default slice.reducer;
-export const {getBugs,filter,createBugs,updateBug,markComplete} = slice.actions
+export const {getBugs,removeBug,filter,createBugs,updateBug,markComplete,getNewId} = slice.actions

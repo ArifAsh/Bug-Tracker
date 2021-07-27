@@ -1,7 +1,6 @@
 import React,{useEffect} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import Card from '../../Components/Dashboard/card'
 import BarChart from './Charts/barchart'
 import Doughnut    from './Charts/doughnut'
 import {getBugs} from '../../../Controllers/Redux/bugSlice'

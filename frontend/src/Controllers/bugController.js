@@ -5,7 +5,7 @@ export function retrieveBugs(){
 
 
     data.push(new bugModel({
-        _id:234345,
+        _id:0,
         name:"Crash on load",
         details:"crashes after 3 seconds",
         steps: "Open app and it crashes",
@@ -17,7 +17,7 @@ export function retrieveBugs(){
         time:"23:38"
     }))
     data.push(new bugModel({
-        _id:237645,
+        _id:1,
         name:" Wont load",
         details:"crashes after 3 seconds",
         steps: "Open app and it crashes",
@@ -29,7 +29,7 @@ export function retrieveBugs(){
         time:"23:38"
     }))
     data.push(new bugModel({
-        _id:134343,
+        _id:2,
         name:" Test data",
         details:" suspect data",
         steps: "Open app and it crashes",
@@ -41,7 +41,7 @@ export function retrieveBugs(){
         time:"22:00"
     }))
     data.push(new bugModel({
-        _id:134003,
+        _id:3,
         name:" Bug tracker",
         details:" Not trackin g bugs",
         steps: "Bugs never tracked",
@@ -53,7 +53,7 @@ export function retrieveBugs(){
         time:"22:00"
     }))
     data.push(new bugModel({
-        _id:174103,
+        _id:4,
         name:" Sorting visualizer",
         details:" Can not see merge sort",
         steps: "merge sort not dispalyed on screen",
@@ -65,7 +65,7 @@ export function retrieveBugs(){
         time:"22:00"
     }))
     data.push(new bugModel({
-        _id:134503,
+        _id:5,
         name:" Pathfinder Visualizer",
         details:"Can not add nodes to grid",
         steps: "Click on empty grid but nothing happens",
@@ -77,7 +77,7 @@ export function retrieveBugs(){
         time:"22:00"
     }))
     data.push(new bugModel({
-        _id:134503,
+        _id:6,
         name:" Sudoku Game and Solver",
         details:"Can not add nodes to grid",
         steps: "Click on empty grid but nothing happens",
@@ -88,11 +88,6 @@ export function retrieveBugs(){
         priority: 4,
         time:"22:00"
     }))
-
-
-
-
-    let sorted = data.sort((a,b)=>{return a.priority - b.priority})
- 
-    return sorted;
+    
+    return data;
 }

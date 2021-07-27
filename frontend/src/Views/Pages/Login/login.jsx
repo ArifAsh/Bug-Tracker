@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React,{useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {signIn} from '../../../Controllers/Redux/authSlice'
@@ -7,9 +8,11 @@ export default()=>{
     const dispatch = useDispatch();
 
     const [formInput,setFormInput] = useState({
+        admin:false,
         name:"",
-        password:""
-    })
+        password:"",
+      
+    });
 
     function inputChanged(e){   // when input is chnaged
         setFormInput({
@@ -18,9 +21,51 @@ export default()=>{
         })
     }
 
-    function submit(e){
-        dispatch(signIn(formInput));     //sends state of form to signIn reducer
-        e.preventDefault();             //prevents page from automatically reloading after hitting submit
+    function DemoAdmin(e){
+        e.preventDefault();        //prevents page from automatically reloading after hitting submit
+       
+        dispatch(signIn({name:formInput.name,admin:true}));     //sends state of form to signIn reducer
+    }
+      
+    function DemoClient(e){
+        e.preventDefault();       //prevents page from automatically reloading after hitting submit  
+        dispatch(signIn({name:formInput.name,admin:false}));      //sends state of form to signIn reducer
+        
+    }
+    function Login(e){
+        e.preventDefault();
+        
+        const info = {
+            email: formInput.name,
+            password: formInput.password
+        }
+    
+        axios.post("http://localhost:4000/app/signIn",info)
+        .then((response)=>{
+            const data = response.data;
+            if (data.success == true){
+                let admin = "";
+                if (data.user.role == "admin"){
+                    admin = true;
+                }else{ 
+                    admin = false
+                }
+                dispatch(signIn({
+                fullName:data.user.fullName,
+                admin: admin,
+                demo: false
+                }))
+               
+                axios.get("http://localhost:4000/app/verify?token="+data.token)
+                .then((response)=>{
+                    const data = response.data;
+                    
+                })
+                
+            }
+        })
+        
+       
     }
 
     return(
@@ -36,7 +81,9 @@ export default()=>{
                     <input name='password' type='password' placeholder = 'Password' onChange={inputChanged} value={formInput.password}></input>
                     
                     <br></br>
-                    <button type='submit' onClick={submit}>Login</button>
+                    <button type='submit' onClick={Login}>Login</button>
+                    <button type='submit' onClick={DemoAdmin}>DemoAdmin</button>
+                    <button type='submit' onClick={DemoClient}>DemoClient</button>
                 </form>
            
         </div>

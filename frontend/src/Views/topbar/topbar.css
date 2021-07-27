@@ -10,17 +10,18 @@
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.233);
 
 }
-.topbar h2{
-    float: left;
+.topbar h3{
+    float: right;
     display: block;
     text-align: center;
+    margin-right: 1.5%;
     
 }
 .topbar input[type=text] {
-    float: right;
+    float: left;
     padding: 6px;
     border: none;
     margin-top: 1.5%;
-    margin-right: 1.5%;
+    
     font-size: 17px;
   }
